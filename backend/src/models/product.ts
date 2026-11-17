@@ -5,8 +5,7 @@ export interface IProduct{
     price: number;
     description: string;
     category:'crochet'|'keychain'|'other';
-    inStock:boolean;
-    
+    inStock:boolean;  
 }
 
 const productSchema = new Schema<IProduct>(

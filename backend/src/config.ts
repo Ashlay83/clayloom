@@ -21,5 +21,8 @@ const connectDB=async  ():Promise<void> =>{
         process.exit(1);
     }
 };
+const secret = process.env.JWT_SECRET;
+if (!secret) throw new Error('JWT_SECRET is not set');
+const jwt_secret: string = secret;
 
-export {connectDB, port};
+export {connectDB, port, jwt_secret};
