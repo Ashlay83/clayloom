@@ -8,7 +8,7 @@ export interface IUser {
 
 const userSchema= new Schema<IUser>(
     {
-       username:{type:String,required:true,lowercase:true},
+       username:{type:String,required:true,lowercase:true,trim:true},
        passwordHash:{type:String,required:true},
     },
     {
