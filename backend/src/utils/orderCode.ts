@@ -7,6 +7,6 @@ export const generateOrderCode=():string =>{
     for(const byte of randomBytes(5)){
         suffix += ALPHABET[byte % ALPHABET.length];
     }
-    return`CR-${suffix}`
+    return`CL-${suffix}`
 };
 
