@@ -1,8 +1,8 @@
 import { Link } from 'react-router-dom';
 import { useCart } from '../context/CartContext';
 import { formatPrice } from '../utils/format';
-import { createOrder } from '../services/orders';
-import {useState, type ChangeEvent, type FormEvent} from 'react';
+
+
 
 
 
@@ -48,20 +48,8 @@ export default function Cart() {
 
       <p className="cart-total">Total: {formatPrice(total)}</p>
       <button onClick={clearCart}>Clear cart</button>
-      <button disabled title="Coming in the next task">
-        Checkout
-      </button>
-      <button
-  onClick={async () => {
-    const result = await createOrder({
-      customer: { name: 'Test Buyer', phone: '9876543210', address: '12 Test Street, Kochi' },
-      items: items.map((i) => ({ productId: i.productId, quantity: i.quantity })),
-    });
-    console.log(result);
-  }}
->
-  Test order
-</button>
+      <Link to="/checkout">Checkout</Link>
+     
     </section>
   );
 }
