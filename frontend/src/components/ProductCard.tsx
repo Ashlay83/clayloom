@@ -1,28 +1,25 @@
-import type { Product } from "../types";
+import { Link } from 'react-router-dom';
+import type { Product } from '../types';
+import { formatPrice } from '../utils/format';
 
-type ProductCardProps= {
-    product:Product;
-}
+type ProductCardProps = {
+  product: Product;
+};
 
-const priceFormatter  = new Intl.NumberFormat('en-IN',{
-    style:"currency",
-    currency:"INR",
-    maximumFractionDigits:0,
-});
+export default function ProductCard({ product }: ProductCardProps) {
+  const { id, name, price, description, category, inStock } = product;
 
-const  ProductCard = ({product}:ProductCardProps)=>{
-    const {name, price,description, category , inStock}= product;
-return (
+  return (
     <article className={inStock ? 'product-card' : 'product-card sold-out'}>
       <span className="product-category">{category}</span>
-      <h3>{name}</h3>
+      <h3>
+        <Link to={`/products/${id}`}>{name}</Link>
+      </h3>
       <p className="product-description">{description}</p>
       <div className="product-footer">
-        <span className="product-price">{priceFormatter.format(price)}</span>
+        <span className="product-price">{formatPrice(price)}</span>
         {!inStock && <span className="badge">Sold out</span>}
       </div>
     </article>
   );
 }
-
-export default ProductCard;
