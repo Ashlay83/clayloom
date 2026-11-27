@@ -4,4 +4,11 @@ const formatter = new Intl.NumberFormat('en-IN',{
     maximumFractionDigits:0,
 });
 
+export const formatDate = (iso: string) =>
+  new Date(iso).toLocaleDateString('en-IN', {
+    day: 'numeric',
+    month: 'short',
+    year: 'numeric',
+  });
+
 export const formatPrice = (amount:number):string =>formatter.format(amount);

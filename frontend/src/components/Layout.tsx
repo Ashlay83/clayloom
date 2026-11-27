@@ -8,10 +8,12 @@ export default function Layout() {
     <>
       <header className="site-header">
         <Link to="/" className="brand">
-          Clayloom {/* replace with your sister's shop name */}
+          Clayloom 
         </Link>
+        
         <nav>
           <NavLink to="/">Shop</NavLink>
+          <NavLink to="/track">Track order</NavLink>
           <NavLink to="/cart">Cart ({count})</NavLink>
         </nav>
       </header>

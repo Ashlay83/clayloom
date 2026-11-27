@@ -37,6 +37,7 @@ export default function OrderConfirmation() {
         Save this code. You'll need it, along with the phone number you ordered with, to
         check your order's status.
       </p>
+      <Link to={`/track?code=${encodeURIComponent(state.code)}`}>Track this order</Link>
       <p>We'll contact you on WhatsApp to confirm your order and share payment details.</p>
       <Link to="/">Continue shopping</Link>
     </section>

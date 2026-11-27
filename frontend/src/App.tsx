@@ -5,6 +5,7 @@ import ProductDetail from './pages/ProductDetail.tsx';
 import  Cart from './pages/Cart.tsx';
 import Checkout from './pages/Checkout.tsx';
 import OrderConfirmation from './pages/OrderConfirmation.tsx';
+import TrackOrder from './pages/TrackOrder.tsx';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Route path="/cart" element={<Cart />} />
         <Route path="/checkout" element={<Checkout/>}/>
         <Route path="/order-confirmation" element={<OrderConfirmation/>} />
+        <Route path='/track' element={<TrackOrder/>}/>
         <Route
           path="*"
           element={
